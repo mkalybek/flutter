@@ -1,0 +1,10 @@
+name: library_catalogue
+description: Practice 2 — Dart domain modeling of a small library catalogue.
+version: 1.0.0
+publish_to: none
+
+environment:
+  sdk: ^3.13.5
+
+dev_dependencies:
+  lints: ^6.0.0
