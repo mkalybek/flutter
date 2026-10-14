@@ -39,11 +39,12 @@ class GameNight {
     required this.startsAt,
     required this.venue,
     required this.seats,
-    List<String> players = const [],
+    // Dart 3.12+ private named parameter: callers write `players:`.
+    this._players = const [],
     this.online = false,
     this.notes,
     this.favourite = false,
-  }) : _players = players;
+  });
 
   // R3: defaults for the "new night" form. Not const: DateTime.now() isn't.
   GameNight.empty()
