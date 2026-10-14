@@ -52,7 +52,7 @@ class _ListTabState extends State<ListTab> {
       ),
     ]..sort(compareByDate);
 
-    // R21: one Column, the list in Expanded. No shrinkWrap, no fixed heights.
+    // R21: one Column, the list in Expanded — lazy, no fixed heights.
     return Column(
       children: [
         Padding(

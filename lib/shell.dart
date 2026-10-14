@@ -124,13 +124,13 @@ class _ShellState extends State<Shell> {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.info_outline),
               title: const Text('About'),
+              trailing: const Icon(Icons.info_outline),
               onTap: _showAbout,
             ),
             ListTile(
-              leading: const Icon(Icons.restore),
               title: const Text('Reset data'),
+              trailing: const Icon(Icons.restore),
               onTap: _resetData,
             ),
           ],

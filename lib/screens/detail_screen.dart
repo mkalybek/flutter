@@ -110,7 +110,7 @@ class _DetailScreenState extends State<DetailScreen> {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        // R31: no leading — AppBar draws the back arrow itself.
+        // R31: no `leading` anywhere — AppBar draws the back arrow itself.
         appBar: AppBar(
           title: Text(_night.title, overflow: TextOverflow.ellipsis),
           actions: [
@@ -229,24 +229,24 @@ class _AboutTab extends StatelessWidget {
     return ListView(
       children: [
         ListTile(
-          leading: const Icon(Icons.event),
           title: Text(formatDateTime(night.startsAt)),
           subtitle: Text(night.isPast ? 'Already started' : 'Upcoming'),
+          trailing: const Icon(Icons.event),
         ),
         ListTile(
-          leading: Icon(night.online ? Icons.link : Icons.place),
           title: Text(night.venue),
           subtitle: Text(night.online ? 'Online' : 'On campus'),
+          trailing: Icon(night.online ? Icons.link : Icons.place),
         ),
         ListTile(
-          leading: const Icon(Icons.event_seat),
           title: Text('$taken of ${night.seats} seats taken'),
           subtitle: Text(night.isFull ? 'Full' : '$free free'),
+          trailing: const Icon(Icons.event_seat),
         ),
         // R6: the optional text appears only when present — no `!` needed,
         // the pattern binds a non-null local.
         if (night.notes case final notes?)
-          ListTile(leading: const Icon(Icons.notes), title: Text(notes)),
+          ListTile(title: Text(notes), subtitle: const Text('Notes')),
       ],
     );
   }
@@ -272,7 +272,6 @@ class _PlayersTab extends StatelessWidget {
       itemBuilder: (context, i) {
         final isYou = players[i] == you;
         return ListTile(
-          leading: const Icon(Icons.person),
           title: Text(players[i]),
           selected: isYou, // "You" highlighted in the theme's primary role
           trailing: isYou ? const Text('You') : null,
